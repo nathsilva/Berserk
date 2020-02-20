@@ -2,6 +2,22 @@
   text-align: center;
 }
 
+body{
+  background-color: #ff790acc;
+}
+
+#grid-projetos{
+  padding: 50px;
+}
+
+.botao-like{
+  cursor: pointer;
+}
+
+.column{
+  margin-top: 50px;
+}
+
 .App-logo {
   height: 40vmin;
   pointer-events: none;
@@ -14,18 +30,18 @@
 }
 
 .App-header {
-  background-color: #282c34;
+  background-color: #000000cc;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
-  color: white;
+  color: #0749ff;
 }
 
 .App-link {
-  color: #61dafb;
+  color: #61f6fb;
 }
 
 @keyframes App-logo-spin {
