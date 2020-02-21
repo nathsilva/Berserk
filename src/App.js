@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import CardProjeto from "./components/CardProjeto";
 import './App.css';
 
 class App extends Component {
@@ -21,41 +22,35 @@ class App extends Component {
   render() {
     return (
       <>
-        <div className="ui inverted fixed huge menu">
-          <div className="ui container">
-            <a href="index.html" className="item">Berserk</a>
-            <button className="ui primary button">criar projeto</button>
-            <div className="ui icon input right menu">
-              <input type="text" placeholder="procurar projeto..." />
-              <i aria-hidden="true" className="search icon"></i>
-            </div>
+        <div class="ui menu inverted">
+          <h2 class="ui header item">Berserk</h2>
+          <span class="item">
+            <button class="ui animated blue basic inverted button ">
+              <span class="visible content">Criar Projeto</span>
+              <span class="hidden content">
+                <i aria-hidden="true" class="arrow right icon"></i>
+              </span>
+            </button>
+          </span>
+          <div class="ui inverted input item right">
+            <input type="text" placeholder="Procurar..." />
           </div>
         </div>
-        <div className="ui stackable three column grid" id="grid-projetos">
-          {
-            this.state.lista.map(function (projeto) {
+        <div class="bloco">
+          <div class="ui stackable container three column grid">
+            {this.state.lista.map(function (projeto) {
               return (
-                <div className="column" >
-                  <div className="ui card">
-                  <div className="image"><img src="https://picsum.photos/600" alt="" /></div>                    
-                  <div className="content">
-                      <div className="header">{projeto.nome}</div>
-                      <div className="meta"><span className="date">{projeto.usuario}</span></div>
-                      <div className="description">{projeto.descricao}</div>
-                    </div>
-                    <div className="extra content">
-                      <a href="index.html">
-                        <i aria-hidden="true" className="user icon"></i>
-                        22 Friends
-                      </a>
-                    </div>
-                  </div>
-                </div>
+                <CardProjeto
+                  key={projeto.id}
+                  nome={projeto.nome}
+                  descricao={projeto.descricao}
+                  usuario={projeto.usuario} 
+                  likes= {projeto.likes}/>
               );
-            })
-          }
+            })}
+          </div>
         </div>
-
+        )
       </>
     );
   }
