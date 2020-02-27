@@ -3,9 +3,7 @@ import React, { Component } from 'react';
 class CardProjeto extends Component {
     constructor() {
         super();
-        this.state = {
-            likes: 0
-        }
+        this.state = {likes: 0}
         this.addLike = this.addLike.bind(this);
     }
 
@@ -36,7 +34,7 @@ class CardProjeto extends Component {
             <div class="column">
             <div class="ui card">
               <div class="image">
-                <img src="https://vigte.https://i.imgur.com/Ap2hNFh.jpg://i.imgur.com/Ap2hNFh.jpgtps://imgur.com/Ap2hNFh.nocookie.net/berserk/images/0/0f/Guts_Post-Eclipse_Manga.jpg/revision/latest/scale-to-width-down/340?cb=20150911201913&path-prefix=pt-br://www.google.com/url?sa=i&url=https%3A%2F%2Fberserk.fandom.com%2Fpt-br%2Fwiki%2FGuts%2FHist%25C3%25B3ria&psig=AOvVaw01pdlTzxF99s206L_eaiMg&ust=1582414025378000&source=images&cd=vfe&ved=0CAIQjRxqFwoTCODRxYXm4-cCFQAAAAAdAAAAABAD" />
+                <img src="Guts_Manga.jpg"/>
               </div>
               <div class="content">
                 <div class="header"> {this.props.nome} </div>
@@ -50,7 +48,7 @@ class CardProjeto extends Component {
     
               <div classname="content">
                 <span>
-                  <i aria-hidden="true" className="chat icon"></i>10 comentários
+                  <i aria-hidden="true" className="chat icon"></i>8000 comentários
                 </span>
                 <span href="/" className="right floated botao-like" onClick={this.addLike}>
                   <i aria-hidden="true" className="heart icon"></i>{this.state.likes} likes
