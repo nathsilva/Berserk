@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import CardProjeto from "./components/CardProjeto";
 import './App.css';
+import ModalNovoProjeto from "./components/ModalNovoProjeto";
 
 class App extends Component {
 
@@ -31,6 +32,7 @@ class App extends Component {
                 <i aria-hidden="true" class="arrow right icon"></i>
               </span>
             </button>
+            <ModalNovoProjeto />
           </span>
           <div class="ui inverted input item right">
             <input type="text" placeholder="Procurar..." />
