@@ -40,6 +40,7 @@ class App extends Component {
             {this.state.lista.map(function (projeto) {
               return (
                 <CardProjeto
+                  id={projeto.id}
                   key={projeto.id}
                   nome={projeto.nome}
                   descricao={projeto.descricao}

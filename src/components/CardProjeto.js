@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import api from '../api';
 
 class CardProjeto extends Component {
 
@@ -15,23 +16,18 @@ class CardProjeto extends Component {
   }
 
   addLike(){
-    let novo_likes = parseInt(this.state.likes +1);
+    let novo_likes = parseInt(this.state.likes) +1;
+    api.put(`projetos/${this.props.id}`, JSON.stringify({likes: novo_likes}) )
+    .then(function(){
     this.setState({likes: novo_likes})
+    })
+    .catch(e =>{
 
-    fetch(
-      "http://localhost:8080/api/projetos/" + this.props.id,
-          {
-              method: 'PUT',
-              headers: {"Content-type": "application/json"},
-              body: JSON.stringify({likes: novo_likes}) 
-          }
-      )
-      .then(result => result.json())
-      .then(function(result){
-          this.setState({ likes: result.likes });
-      }.bind(this)
-  )
+    })
+
   }
+
+  
 
 render(){
     return(
@@ -67,5 +63,6 @@ render(){
 }
 
 }
+
 
 export default CardProjeto;
